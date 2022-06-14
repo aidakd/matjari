@@ -1,0 +1,12 @@
+DATA PROJECT
+
+
+- [ ] PYTHON SCRIPT TO FETCH IMAGES AND STORE THEM IN FOLDER
+- [ ] BLUR OPTION (IGNORE)
+- [ ] 25% of rows to train the model (train data)
+- [ ] Clean the data set + python script + first model to train
+- [ ] https://pyimagesearch.com/2015/09/07/blur-detection-with-opencv/
+- [ ] Create to do list for all teammates
+    - [ ] Clean data set
+    - [ ] Get deep on product types (what needs to be changed / kept) —> use product type list to figure it out
+    - [ ] CNN Deep Learning
