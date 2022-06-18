@@ -1,0 +1,12 @@
+{
+    "url": "https://cdn.shopify.com/s/files/1/0050/7478/0275/products/image_cddcff04-5d04-4062-b270-f35addbb0a68.jpg?v=1629966348",
+    "key": "000006308",
+    "status": "success",
+    "error_message": null,
+    "width": 256,
+    "height": 256,
+    "original_width": 1028,
+    "original_height": 1028,
+    "exif": "{\"Image ImageWidth\": \"852\", \"Image ImageLength\": \"1280\", \"Image BitsPerSample\": \"[8, 8, 8]\", \"Image Orientation\": \"Horizontal (normal)\", \"Image SamplesPerPixel\": \"3\", \"Image XResolution\": \"72\", \"Image YResolution\": \"72\", \"Image ResolutionUnit\": \"Pixels/Inch\", \"Image HostComputer\": \"imagery4\", \"Image ExifOffset\": \"166\", \"Thumbnail Compression\": \"JPEG (old-style)\", \"Thumbnail XResolution\": \"72\", \"Thumbnail YResolution\": \"72\", \"Thumbnail ResolutionUnit\": \"Pixels/Inch\", \"Thumbnail JPEGInterchangeFormat\": \"314\", \"Thumbnail JPEGInterchangeFormatLength\": \"12096\", \"EXIF ExifVersion\": \"\", \"EXIF ColorSpace\": \"Uncalibrated\", \"EXIF ExifImageWidth\": \"1028\", \"EXIF ExifImageLength\": \"1028\"}",
+    "md5": "603d255baaeeac91dd72b0e97a999a78"
+}
