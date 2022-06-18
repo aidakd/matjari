@@ -1,0 +1,15 @@
+{
+    "count": 3065,
+    "successes": 3024,
+    "failed_to_download": 41,
+    "failed_to_resize": 0,
+    "duration": 494.08843064308167,
+    "start_time": 1655506060.6608992,
+    "end_time": 1655506554.7493298,
+    "status_dict": {
+        "success": 3024,
+        "HTTP Error 404: Not Found": 39,
+        "IncompleteRead(8220818 bytes read, 7249225 more expected)": 1,
+        "IncompleteRead(8220812 bytes read, 5707854 more expected)": 1
+    }
+}

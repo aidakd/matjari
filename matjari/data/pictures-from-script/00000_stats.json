@@ -1,0 +1,23 @@
+{
+    "count": 10000,
+    "successes": 9857,
+    "failed_to_download": 143,
+    "failed_to_resize": 0,
+    "duration": 1664.465479850769,
+    "start_time": 1655504396.1766322,
+    "end_time": 1655506060.642112,
+    "status_dict": {
+        "success": 9857,
+        "HTTP Error 404: Not Found": 124,
+        "<urlopen error _ssl.c:1114: The handshake operation timed out>": 5,
+        "The read operation timed out": 6,
+        "IncompleteRead(8220818 bytes read, 3271608 more expected)": 1,
+        "IncompleteRead(10973336 bytes read, 1701179 more expected)": 1,
+        "IncompleteRead(8212628 bytes read, 7840844 more expected)": 1,
+        "IncompleteRead(8220819 bytes read, 6862563 more expected)": 1,
+        "IncompleteRead(8204430 bytes read, 8813591 more expected)": 1,
+        "IncompleteRead(8220814 bytes read, 9874237 more expected)": 1,
+        "IncompleteRead(8220809 bytes read, 7513082 more expected)": 1,
+        "IncompleteRead(8212626 bytes read, 10135959 more expected)": 1
+    }
+}
