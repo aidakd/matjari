@@ -10,7 +10,7 @@ from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 
 
-path = '../matjari/data/matjari-dataset-cleaned.csv'
+path = '../raw_data/matjari-dataset-cleaned.csv'
 path_to_json = "../raw_data/pictures-from-script/ALL Pictures"
 
 

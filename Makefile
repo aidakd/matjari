@@ -1,3 +1,5 @@
+PACKAGE_NAME = matjari
+FILENAME = trainer
 # ----------------------------------
 #          INSTALL & TEST
 # ----------------------------------
@@ -30,6 +32,7 @@ install:
 
 all: clean install test black check_code
 
+
 count_lines:
 	@find ./ -name '*.py' -exec  wc -l {} \; | sort -n| awk \
         '{printf "%4s %s\n", $$1, $$2}{s+=$$0}END{print s}'
@@ -41,6 +44,8 @@ count_lines:
         '{printf "%4s %s\n", $$1, $$2}{s+=$$0}END{print s}'
 	@echo ''
 
+run_locally:
+	@python -m ${PACKAGE_NAME}.${FILENAME}
 # ----------------------------------
 #      UPLOAD PACKAGE TO PYPI
 # ----------------------------------

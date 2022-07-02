@@ -10,7 +10,8 @@ import pandas as pd
 import numpy as np
 import joblib
 
-
+#BUCKET_NAME:wagon-data-839-kandil
+#BUCKET_TRAIN_DATA_PATH:'../raw_data/matjari-dataset-cleaned.csv' et '../raw_data/pictures-from-script/ALL Pictures'
 
 class Trainer():
     def __init__(self, model):
