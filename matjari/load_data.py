@@ -10,21 +10,21 @@ from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 
 
-path = '../raw_data/matjari-dataset-cleaned.csv'
-path_to_json = "../raw_data/pictures-from-script/ALL Pictures"
+path_to_data = 'gs://wagon-data-839-kandil/data/matjari-dataset-cleaned.csv'
+path_to_jsons_and_img = 'gs://wagon-data-839-kandil/ALL Pictures'
 
 
 def get_data():
-    df = pd.read_csv(path, sep='\t')
+    df = pd.read_csv(path_to_data, sep='\t')
     df.columns = ['Product Label','url']
     return df
 
 def load_json(df):
-    json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
+    json_files = [pos_json for pos_json in os.listdir(path_to_jsons_and_img) if pos_json.endswith('.json')]
     jsons_data = pd.DataFrame(columns=["url", "key", "status", "error_message", "width", "height", "original_width", "original_height", "exif", "md5"])
 
     for index, js in enumerate(json_files):
-        with open(os.path.join(path_to_json, js)) as json_file:
+        with open(os.path.join(path_to_jsons_and_img, js)) as json_file:
             json_text = json.load(json_file)
 
             # here you need to know the layout of your json and each json has to have
@@ -48,7 +48,7 @@ def load_json(df):
 def load_img(df_merge):
     A = []
     for i in range(0, len(df_merge)):
-        img = Image.open('../raw_data/pictures-from-script/ALL Pictures/' + str(df_merge['key'][i]) + '.jpg')
+        img = Image.open(path_to_jsons_and_img + str(df_merge['key'][i]) + '.jpg')
         img_array = asarray(img)
         A.append(img_array)
     df_merge['A'] = A

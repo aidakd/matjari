@@ -9,15 +9,14 @@ from tensorflow.keras.layers.experimental.preprocessing import Rescaling
 import pandas as pd
 import numpy as np
 import joblib
+from google.cloud import storage
 
-#BUCKET_NAME:wagon-data-839-kandil
-#BUCKET_TRAIN_DATA_PATH:'../raw_data/matjari-dataset-cleaned.csv' et '../raw_data/pictures-from-script/ALL Pictures'
+BUCKET_NAME='wagon-data-839-kandil'
+STORAGE_LOCATION = 'models/model_cnn.joblib'
 
 class Trainer():
     def __init__(self, model):
         self.model = model
-
-
 
     def get_model(self):
         #build pipeline later
@@ -69,11 +68,15 @@ class Trainer():
         X_train, X_test, y_train, y_test = split_data(X, y)
         self.model.evaluate(X_test, y_test, verbose=2)
 
+    def upload_model_to_gcp():
+        client = storage.Client()
+        bucket = client.bucket(BUCKET_NAME)
+        blob = bucket.blob(STORAGE_LOCATION)
+        blob.upload_from_filename('model.joblib')
+        print(f"uploaded model.joblib to gcp cloud storage!")
+
     def save_model(self):
         joblib.dump(self.model, 'model.joblib')
-
-
-
 
 if __name__ == "__main__":
     pass

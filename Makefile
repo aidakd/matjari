@@ -1,5 +1,3 @@
-PACKAGE_NAME = matjari
-FILENAME = trainer
 # ----------------------------------
 #          INSTALL & TEST
 # ----------------------------------
@@ -62,6 +60,16 @@ pypi:
 # ----------------------------------
 #      UPLOAD PACKAGE TO GCP
 # ----------------------------------
+PACKAGE_NAME = matjari
+FILENAME = trainer
+
+PYTHON_VERSION=3.7
+RUNTIME_VERSION=1.15
+
+BUCKET_TRAINING_FOLDER = 'trainings'
+
+JOB_NAME=matjari_training_pipeline_$(shell date +'%Y%m%d_%H%M%S')
+
 # project id - replace with your GCP project id
 PROJECT_ID=le-wagon-352311
 
@@ -79,7 +87,7 @@ create_bucket:
 
 # path to the file to upload to GCP (the path to the file should be absolute or should match the directory where the make command is ran)
 # replace with your local path to the `train_1k.csv` and make sure to put the path between quotes
-LOCAL_PATH="/Users/Safaemichelot/code/aidakd/matjari/raw_data/matjari_dataset_cleaned.csv"
+LOCAL_PATH="/Users/Safaemichelot/code/aidakd/matjari/raw_data/matjari-dataset-cleaned.csv"
 
 # bucket directory in which to store the uploaded file (`data` is an arbitrary name that we choose to use)
 BUCKET_FOLDER=data
@@ -89,3 +97,13 @@ BUCKET_FILE_NAME=$(shell basename ${LOCAL_PATH})
 
 upload_data:
 	@gsutil cp ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${BUCKET_FILE_NAME}
+
+gcp_submit_training:
+	gcloud ai-platform jobs submit training ${JOB_NAME}
+		--job-dir gs://${BUCKET_NAME}/${BUCKET_TRAINING_FOLDER}  \
+  	--package-path ${PACKAGE_NAME} \
+  	--module-name ${PACKAGE_NAME}.${FILENAME} \
+  	--python-version=${PYTHON_VERSION} \
+  	--runtime-version=${RUNTIME_VERSION} \
+  	--region ${REGION} \
+  	--stream-logs

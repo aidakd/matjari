@@ -1,1 +1,3 @@
 include requirements.txt
+graft matjari
+global-exclude *py[cod] __pycache__ *.so *.ipynb
