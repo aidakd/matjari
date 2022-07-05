@@ -68,6 +68,11 @@ class Trainer():
         X_train, X_test, y_train, y_test = split_data(X, y)
         self.model.evaluate(X_test, y_test, verbose=2)
 
+    def predict(self,X_new):
+        y_pred = self.model.predict(X_new)
+        return y_pred
+
+
     def upload_model_to_gcp():
         client = storage.Client()
         bucket = client.bucket(BUCKET_NAME)

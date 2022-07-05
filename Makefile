@@ -66,24 +66,24 @@ FILENAME = trainer
 PYTHON_VERSION=3.7
 RUNTIME_VERSION=1.15
 
-BUCKET_TRAINING_FOLDER = 'trainings'
+BUCKET_TRAINING_FOLDER = trainings
 
 JOB_NAME=matjari_training_pipeline_$(shell date +'%Y%m%d_%H%M%S')
 
 # project id - replace with your GCP project id
-PROJECT_ID=le-wagon-352311
+PROJECT_ID=matjari-355418
 
 # bucket name - replace with your GCP bucket name
-BUCKET_NAME=wagon-data-839-kandil
+BUCKET_NAME=wagon-data-839-safaem
 
-# choose your region from https://cloud.google.com/storage/docs/locations#available_locations
-REGION=europe-west1
+# choose your region
+#REGION=europe-west1
 
 set_project:
 	@gcloud config set project ${PROJECT_ID}
 
 create_bucket:
-	@gsutil mb -l ${REGION} -p ${PROJECT_ID} gs://${BUCKET_NAME}
+	@gsutil mb -l europe-west1 -p ${PROJECT_ID} gs://${BUCKET_NAME}
 
 # path to the file to upload to GCP (the path to the file should be absolute or should match the directory where the make command is ran)
 # replace with your local path to the `train_1k.csv` and make sure to put the path between quotes
@@ -100,10 +100,10 @@ upload_data:
 
 gcp_submit_training:
 	gcloud ai-platform jobs submit training ${JOB_NAME}
-		--job-dir gs://${BUCKET_NAME}/${BUCKET_TRAINING_FOLDER}  \
+		--job-dir gs://${BUCKET_NAME}/${BUCKET_TRAINING_FOLDER}/  \
   	--package-path ${PACKAGE_NAME} \
   	--module-name ${PACKAGE_NAME}.${FILENAME} \
   	--python-version=${PYTHON_VERSION} \
   	--runtime-version=${RUNTIME_VERSION} \
-  	--region ${REGION} \
+		--region europe-west1 \
   	--stream-logs
