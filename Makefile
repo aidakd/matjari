@@ -63,7 +63,7 @@ pypi:
 PACKAGE_NAME = matjari
 FILENAME = trainer
 
-PYTHON_VERSION=3.7
+PYTHON_VERSION=3.8
 RUNTIME_VERSION=1.15
 
 BUCKET_TRAINING_FOLDER = trainings
@@ -71,10 +71,10 @@ BUCKET_TRAINING_FOLDER = trainings
 JOB_NAME=matjari_training_pipeline_$(shell date +'%Y%m%d_%H%M%S')
 
 # project id - replace with your GCP project id
-PROJECT_ID=matjari-355418
+PROJECT_ID=wagon-bootcamp-352309
 
 # bucket name - replace with your GCP bucket name
-BUCKET_NAME=wagon-data-839-safaem
+BUCKET_NAME=wagon-data-839-melliani
 
 # choose your region
 #REGION=europe-west1
