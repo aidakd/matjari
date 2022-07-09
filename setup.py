@@ -10,5 +10,5 @@ setup(name='matjari',
       description="Project Description",
       packages=find_packages(),
       install_requires=requirements,
-      # include_package_data: to install data from MANIFEST.in
-      include_package_data=True)
+      include_package_data=True #to install data from MANIFEST.in
+    )
