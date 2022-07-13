@@ -17,6 +17,7 @@ import datetime as dt
 import speech_recognition as sr
 from pathlib import Path
 import emoji
+import klaam.scripts
 
 #voice recorder
 parent_dir = os.path.dirname(os.path.abspath(__file__))
