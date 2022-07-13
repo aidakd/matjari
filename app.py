@@ -2,6 +2,10 @@ from unittest import result
 import google_trans_new_main.google_trans_new1
 from google_trans_new_main.google_trans_new1 import google_translator
 import tensorflow as tensorflow
+import keras
+import keras_preprocessing
+import tensorflow_datasets
+import tensorflow_estimator
 from tensorflow.keras.applications.resnet50 import ResNet50
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
 import numpy as np
