@@ -16,6 +16,7 @@ from gtts import gTTS
 import datetime as dt
 import speech_recognition as sr
 from pathlib import Path
+import emoji
 
 #voice recorder
 parent_dir = os.path.dirname(os.path.abspath(__file__))
@@ -125,7 +126,7 @@ if img_data is not None:
         st.text("")
         st.text("")
         st.text("")
-        st.checkbox("Something Else: Record your answer below")
+        st.checkbox("Something Else: Record your answer below", emoji.emojize(":backhand_index_pointing_down:"))
 
 
     #with col2:
@@ -228,7 +229,7 @@ if img_data is not None:
         st.audio(audio_bytes8, format='audio/ogg',start_time=0)
 
 
-    st_audiorec()
+st_audiorec()
 
         #translate1 = trans.translate(text1,lang_src=value1,lang_tgt=value2)
         #st.info(str(translate1))
