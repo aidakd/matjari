@@ -65,7 +65,7 @@ if img_data is not None:
     text3 = make_prediction[0][2][1]
     text4 = make_prediction[0][3][1]
     text5 = make_prediction[0][4][1]
-    text8 = "Something Else: Record your answer below"
+    text8 = "Something Else: Record your answer below :backhand_index_pointing_down:"
 
     #language = 'en'
 
@@ -126,7 +126,7 @@ if img_data is not None:
         st.text("")
         st.text("")
         st.text("")
-        st.checkbox("Something Else: Record your answer below", emoji.emojize(":backhand_index_pointing_down:"))
+        st.checkbox("Something Else: Record your answer below")
 
 
     #with col2:
