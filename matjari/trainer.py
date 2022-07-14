@@ -1,5 +1,5 @@
 from matjari.load_data import get_data, load_json, load_img, encod, split_data
-from matjari.load_data importget_data_using_blob
+from matjari.load_data import get_data_using_blob
 import tensorflow as tf
 from tensorflow.keras import models
 from tensorflow.keras import Sequential, layers
@@ -31,7 +31,7 @@ def get_model(X, y):
 
     model.add(layers.Flatten())
     model.add(layers.Dense(1000, activation='relu'))
-    model.add(layers.Dense(8, activation='softmax'))
+    model.add(layers.Dense(15, activation='softmax'))
     #compile
     learning_rate=1e-4
     opt = optimizers.Adam(learning_rate=learning_rate)

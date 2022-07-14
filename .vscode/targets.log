@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sat Jul  9 13:34:41 2022
+# Make data base, printed on Mon Jul 11 20:07:10 2022
 
 # Variables
 
@@ -31,11 +31,11 @@ HOMEBREW_NO_ANALYTICS = 1
 CURDIR := /Users/Safaemichelot/code/aidakd/matjari
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 90)
-LOCAL_PATH = "/Users/Safaemichelot/code/aidakd/matjari/raw_data/matjari-dataset-cleaned.csv"
+# makefile (from `Makefile', line 91)
+LOCAL_PATH = "/Users/Safaemichelot/code/aidakd/matjari/raw_data/pictures-from-script/ALL"
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{},"_languagePackSupport":true}
-# makefile (from `Makefile', line 96)
+# makefile (from `Makefile', line 97)
 BUCKET_FILE_NAME = $(shell basename ${LOCAL_PATH})
 # environment
 _ = /usr/bin/make
@@ -48,13 +48,13 @@ PYPI_USERNAME = <AUTHOR>
 # environment
 VSCODE_CWD = /Users/Safaemichelot/code/aidakd/matjari
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BjWljyHbHZ/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.NYVcH8LPIA/Render
 # environment
 PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./node_modules/.bin:/Users/Safaemichelot/.pyenv/plugins/pyenv-virtualenv/shims:/Users/Safaemichelot/.rbenv/bin:/Users/Safaemichelot/.pyenv/plugins/pyenv-virtualenv/shims:/Users/Safaemichelot/.pyenv/shims:/Users/Safaemichelot/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-VIRTUAL_ENV = /Users/Safaemichelot/.pyenv/versions/3.8.12/envs/lewagon
+VIRTUAL_ENV = /Users/Safaemichelot/.pyenv/versions/lewagon/envs/matjari
 # makefile (from `Makefile', line 67)
 RUNTIME_VERSION = 1.15
 # environment
@@ -64,13 +64,13 @@ PYENV_ROOT = /Users/Safaemichelot/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /var/folders/fy/xxpgg4yd01l_vn0sxsncb62m0000gn/T//ssh-xvCoeiEeUM4C/agent.618
+SSH_AUTH_SOCK = /var/folders/fy/xxpgg4yd01l_vn0sxsncb62m0000gn/T//ssh-Z5bZlZr4JR5e/agent.801
 # automatic
 %F = $(notdir $%)
 # environment
 PWD = /Users/Safaemichelot/code/aidakd/matjari
 # environment
-SSH_AGENT_PID = 620
+SSH_AGENT_PID = 831
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -112,7 +112,7 @@ USER = Safaemichelot
 # makefile
 .DEFAULT_GOAL := install_requirements
 # environment
-TERM_SESSION_ID = 403CF04D-9F0A-4F2C-9CB0-3CBF886C35C6
+TERM_SESSION_ID = C50451C4-1531-4047-ACDA-1577D7D7AE6E
 # environment
 LESS = -R
 # automatic
@@ -132,6 +132,8 @@ TMPDIR = /var/folders/fy/xxpgg4yd01l_vn0sxsncb62m0000gn/T/
 # environment
 VSCODE_IPC_HOOK = /Users/Safaemichelot/Library/Application Support/Code/1.69.0-main.sock
 # environment
+MallocNanoZone = 0
+# environment
 PYTHONPATH = /Users/Safaemichelot/code/Safae839/data-challenges/04-Decision-Science:
 # makefile
 MAKEFLAGS = Rrqp
@@ -147,8 +149,8 @@ NVM_DIR = /Users/Safaemichelot/.nvm
 XPC_SERVICE_NAME = 0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# makefile (from `Makefile', line 93)
-BUCKET_FOLDER = data
+# makefile (from `Makefile', line 94)
+BUCKET_FOLDER = data2
 # automatic
 +F = $(notdir $+)
 # makefile (from `Makefile', line 77)
@@ -170,7 +172,9 @@ LC_ALL = C
 # environment
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
 # environment
-PYENV_VIRTUAL_ENV = /Users/Safaemichelot/.pyenv/versions/3.8.12/envs/lewagon
+PYENV_VIRTUAL_ENV = /Users/Safaemichelot/.pyenv/versions/lewagon/envs/matjari
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -190,11 +194,11 @@ LANG = C
 # environment
 TERM = xterm-256color
 # makefile (from `Makefile', line 69)
-BUCKET_TRAINING_FOLDER = trainings
+BUCKET_TRAINING_FOLDER = 'trainings'
 # environment
-VSCODE_PID = 1029
+VSCODE_PID = 2363
 # variable set hash-table stats:
-# Load=91/1024=9%, Rehash=0, Collisions=3/117=3%
+# Load=93/1024=9%, Rehash=0, Collisions=3/119=3%
 
 # Pattern-specific Variable Values
 
@@ -202,9 +206,9 @@ VSCODE_PID = 1029
 
 # Directories
 
-# . (device 16777220, inode 12890446874): 19 files, no impossibilities.
+# . (device 16777220, inode 12890446874): 20 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -254,7 +258,7 @@ pypi:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-05 21:00:23
+#  Last modified 2022-07-09 16:41:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -273,7 +277,7 @@ gcp_submit_training:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 102):
+#  commands to execute (from `Makefile', line 103):
 	gcloud ai-platform jobs submit training ${JOB_NAME}
 	--job-dir gs://${BUCKET_NAME}/${BUCKET_TRAINING_FOLDER}/  \
 	--package-path ${PACKAGE_NAME} \
@@ -292,13 +296,13 @@ build:
 	@python setup.py sdist bdist_wheel
 	
 
+ 
 upload_data:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 99):
-	@gsutil cp ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${BUCKET_FILE_NAME}
+#  commands to execute (from `Makefile', line 100):
+	@gsutil cp -r ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${BUCKET_FILE_NAME}
 	
 
 set_project:
@@ -425,6 +429,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Jul  9 13:34:41 2022
+# Finished Make data base on Mon Jul 11 20:07:10 2022
 
  

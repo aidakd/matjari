@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/Safaemichelot/code/aidakd/matjari'
+pip install -r requirements.txt
+make: Leaving directory `/Users/Safaemichelot/code/aidakd/matjari'
+ 

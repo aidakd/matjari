@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+#from matplotlib import pyplot as plt
 import os, json
 import pandas as pd
 from PIL import Image
@@ -10,16 +10,16 @@ from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 from google.cloud import storage
 
-path_to_data = 'gs://wagon-data-839-melliani/data/matjari-dataset-cleaned.csv'
+path_to_data = 'gs://wagon-data-839-melliani/datademo/matjari-dataset-cleaned.csv'
 #local_path = 'raw_data/matjari-dataset-cleaned.csv'
 
 BUCKET_NAME='wagon-data-839-melliani'
-folder="data/"
-path_jsons_jpg_files =  'raw_data/'+folder.replace('/','')
+folder="datademo/"
+path_jsons_jpg_files = 'raw_data/'+folder
 #path_jsons_jpg_files = 'raw_data/pictures-from-script/ALL Pictures'
 
 def get_data():
-    df = pd.read_csv(path_to_data, sep='\t')
+    df = pd.read_csv(path_to_data, sep='\t', nrows=5000)
     df.columns = ['Product Label','url']
     return df
 #get_data()
@@ -74,7 +74,7 @@ def load_json(df):
 def load_img(df_merge):
     A = []
     for i in range(0, len(df_merge)):
-        img = Image.open(path_jsons_jpg_files+'/' + str(df_merge['key'][i]) + '.jpg')
+        img = Image.open(path_jsons_jpg_files + str(df_merge['key'][i]) + '.jpg')
         img_array = asarray(img)
         A.append(img_array)
     df_merge['A'] = A
@@ -84,10 +84,10 @@ def load_img(df_merge):
 #def_merge = load_img(df_merge)
 
 #this function was just a step before uploading data and model to GCP to run data and model locally
-#def load_nrows(df_merge):
-#    nrows = 100
-#    df_merge = df_merge.sample(n=nrows, random_state = 11)
-#    return df_merge
+# def load_nrows(df_merge):
+#     nrows = 5000
+#     df_merge = df_merge.sample(n=nrows, random_state = 11)
+#     return df_merge
 
 def encod(df_merge):
     encoder = LabelEncoder()

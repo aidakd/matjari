@@ -1,30 +1,31 @@
 # packaging
-pip>=9
+pip == 22.1.2
 setuptools>=26
 twine
 wheel>=0.29
-
 # data science
 numpy
 pandas
 scikit-learn
-tensorflow
-
+tensorflow==2.7.0
+pillow
 # tests/linter
 black
 coverage
 flake8
 pytest
 yapf
-
 # API
 gcsfs
 google-cloud-storage
 mlflow
 s3fs
-
 # utilities
 six>=1.14
 joblib
 memoized-property
 termcolor
+httplib2>=0.15.0
+google-auth<2.0
+# dev>=1.24.0
+importlib-metadata<4.3
