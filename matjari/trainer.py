@@ -1,5 +1,4 @@
-from matjari.load_data import get_data, load_json, load_img, encod, split_data
-from matjari.load_data import get_data_using_blob
+from matjari.data import get_final_data, encod, split_data
 import tensorflow as tf
 from tensorflow.keras import models
 from tensorflow.keras import Sequential, layers
@@ -31,7 +30,10 @@ def get_model(X, y):
 
     model.add(layers.Flatten())
     model.add(layers.Dense(1000, activation='relu'))
-    model.add(layers.Dense(15, activation='softmax'))
+
+    #depending on data_set num classes changes
+    #also depending on the type of the final y you can use code here it would be len(np.unique(y) as y_encod was list but we decide to put the number 13 for the demoday
+    model.add(layers.Dense(13, activation='softmax'))
     #compile
     learning_rate=1e-4
     opt = optimizers.Adam(learning_rate=learning_rate)
@@ -39,6 +41,7 @@ def get_model(X, y):
                     optimizer=opt,
                     metrics=['accuracy'])
     print('model compiled')
+    #fit
     es = EarlyStopping(patience = 20, restore_best_weights = True)
     model.fit(X, y,
             batch_size=16,
@@ -49,28 +52,7 @@ def get_model(X, y):
     print('model fitted')
     return model
 
-# def fit_model(self, X, y):
-#     es = EarlyStopping(patience = 20, restore_best_weights = True)
-#     #data = get_data()
-#     #data = load_json(data)
-#     #data = load_img(data)
-#     #X, y = encod(data)
-#     #X_train, X_test, y_train, y_test = split_data(X, y)
-#     self.fit(X, y,
-#              batch_size=None,
-#              epochs=2,
-#              validation_split=0.3,
-#              callbacks=[es],
-#              verbose = 2)
-#     print('model fitted')
-#     return self
-
 def evaluate_model(model, X, y):
-    #data = get_data()
-    #data = load_json(data)
-    #data = load_img(data)
-    #X, y = encod(data)
-    #X_train, X_test, y_train, y_test = split_data(X, y)
     score = model.evaluate(X, y, verbose=2)
     print('evaluating done')
     return score
@@ -93,11 +75,8 @@ def upload_model_to_gcp():
 
 if __name__ == "__main__":
     #what to test
-    df = get_data()
-    get_data_using_blob()
-    df_merge = load_json(df)
-    df_merge = load_img(df_merge)
-    X, y = encod(df_merge)
+    X, y = get_final_data()
+    y = encod(y)
     X_train, X_test, y_train, y_test = split_data(X, y)
     model = get_model(X_train, y_train)
     score = evaluate_model(model, X_test, y_test)
